@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Domain</title>
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='DNS-Blockchain.jpg') }}');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 40px; /* Increased font size */
+            color: black;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            font-size: 30px; /* Increased font size for labels */
+            color: black; /* Ensures labels are readable on background */
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="submit"] {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 24px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: white;
+            color: black;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register Domain</h1>
+    <form action="/register_domain" method="post">
+        <label for="domain_name">Domain Name:</label>
+        <input type="text" id="domain_name" name="domain_name"><br>
+        <label for="ip_address">IP Address:</label>
+        <input type="text" id="ip_address" name="ip_address"><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
